@@ -1,0 +1,12 @@
+.container-fluid {
+    background-color: #f7f5ee;
+}
+
+ul{
+    list-style: '-';
+}
+
+h2{
+    font-weight: lighter !important;
+    text-transform: uppercase !important;
+}

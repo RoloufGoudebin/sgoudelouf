@@ -1,1 +1,31 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+
 /* You can add global styles to this file, and also import other style files */
+body, html{
+    height: 100vh ;
+    
+}
+
+h1,h2,h3{
+    color: #616057;
+}
+
+h2 {
+    font-size: 35px !important;
+}
+
+p{
+    text-align: justify;
+    color: #616057;
+}
+
+li{
+    color: #616057;
+}
+
+a{
+    text-decoration: none !important;
+    color: #616057 !important;
+}
+

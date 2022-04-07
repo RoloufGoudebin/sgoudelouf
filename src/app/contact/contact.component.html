@@ -1,0 +1,66 @@
+<div class="container-fluid mt-5 mt-lg-5 pt-5">
+    <div class="col-lg-6 mx-auto pt-0 pt-lg-5">
+        <h2 class="pb-3 animate__animated animate__fadeInUp">Contactez-moi</h2>
+        <div class="row">
+            <div class="col-lg-6 col-11 mx-auto mx-lg-0  animate__animated animate__fadeInLeft">
+                <div class="row">
+                    <form [formGroup]="contactForm" class="example-form col-12">
+                        <mat-form-field class="example-full-width col-12" appearance="fill">
+                            <mat-label>Votre Nom</mat-label>
+                            <input matInput placeholder="Ex. Jean Dupont" type="text" formControlName="name" id="name"
+                                required>
+                        </mat-form-field>
+
+                        <mat-form-field class="example-full-width col-12" appearance="fill">
+                            <mat-label>Adresse Email</mat-label>
+                            <input matInput placeholder="Ex. jean.dupont@gmail.com" type="text" formControlName="mail"
+                                id="mail" required>
+                        </mat-form-field>
+
+                        <mat-form-field class="example-full-width col-12" appearance="fill">
+                            <mat-label>Votre Message</mat-label>
+                            <textarea matInput rows="8" type="text" formControlName="message" id="message"></textarea>
+                        </mat-form-field>
+                    </form>
+                    <button type="button" class="btn btn-dark col-lg-5 mx-auto col-10 mb-3" (click)="onSubmit()"
+                            [disabled]="!contactForm.valid">Envoyer</button>
+                </div>
+            </div>
+            <div class="col-lg-5 col-11 ms-lg-auto col-12 my-5 my-lg-0  animate__animated animate__fadeInRight">
+                <ul>
+                    <li>
+                        <a target="_blank"
+                            href="https://www.google.be/maps/place/Av.+Pont+des+Pr%C3%AAcheurs+21,+1495+Villers-la-Ville/@50.5740898,4.5439003,17z/data=!3m1!4b1!4m5!3m4!1s0x47c22abc1f73dc1f:0xe458225c3e4da372!8m2!3d50.5740864!4d4.546089">
+                            <i class="bi bi-geo"></i>
+                            Avenue du Pont des prêcheurs, 21
+                            <br>
+                            <div class="ms-4">
+                                1495 Villers-la-ville
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:sgoudelouf@gmail.com">
+                            <i class="bi bi-envelope"></i>
+                            sgoudelouf@gmail.com
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="tel:0032471875548">
+                            <i class="bi bi-telephone"></i>
+                            0471/87.55.48
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="col-12 animate__animated animate__fadeInDown pb-5 mb-5">
+                <iframe class="pb-5 mb-5"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2533.85339091916!2d4.543900315980917!3d50.57408978632892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c22abc1f73dc1f%3A0xe458225c3e4da372!2sAv.%20Pont%20des%20Pr%C3%AAcheurs%2021%2C%201495%20Villers-la-Ville!5e0!3m2!1sfr!2sbe!4v1649184222569!5m2!1sfr!2sbe"
+                    width="1000" height="450" style="border:0; overflow: hidden;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+</div>

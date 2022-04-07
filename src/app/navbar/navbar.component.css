@@ -1,0 +1,12 @@
+.bg-light{
+    background-color: #F0EBDD !important;
+}
+
+.navbar-brand{
+    font-weight : lighter;
+    text-transform: uppercase;
+}
+
+.active{
+    color: black;
+}
