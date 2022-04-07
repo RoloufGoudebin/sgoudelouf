@@ -1,0 +1,42 @@
+server {
+
+	server_name  sgoudelouf.com www.sgoudelouf.com;
+	
+	root   /var/www/html/sgoudelouf;
+		
+        server_tokens off;
+
+        location ~ /index.html|.*\.json$ {
+          expires -1;        
+          add_header Cache-Control 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0';     
+        }
+
+        location ~ .*\.css$|.*\.js$|.*\.jpg$|.*\.png$|.*\.webp$ {               
+          add_header Cache-Control 'max-age=31449600'; # one year             
+        }
+        
+        location ~* \.(eot|otf|ttf|woff|woff2)$ {
+          add_header Access-Control-Allow-Origin *;
+        }     
+
+
+        error_page 430 = @prerender;
+        location / {
+        	add_header Cache-Control 'max-age=86400'; # one day
+        	add_header X-Frame-Options "";
+	        add_header Access-Control-Allow-Origin *;
+        	add_header Access-Control-Max-Age 3600;
+        	add_header Access-Control-Expose-Headers Content-Length;
+        	add_header Access-Control-Allow-Headers Range;   
+
+
+	    	try_files $uri$args $uri$args/ /index.html;         
+            	add_header Cache-Control 'max-age=86400'; # one day     
+	}
+		
+	location /sendmail {
+            proxy_pass      http://localhost:3000;
+            proxy_redirect  http://localhost:3000/ /;
+            proxy_read_timeout 60s;
+        }
+}
