@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   constructor(private titleService : Title) { }
 
   ngOnInit(): void {
-    this.titleService.setTitle("Accueil | Sarah Goudelouf")
+    this.titleService.setTitle("Sarah Goudelouf, psychologue clinicienne à Villers-la-Ville")
   }
 
 }
