@@ -1,6 +1,6 @@
 server {
 
-	server_name  sgoudelouf.com www.sgoudelouf.com;
+	server_name  sgoudelouf.com;
 	
 	root   /var/www/html/sgoudelouf;
 		
@@ -39,4 +39,9 @@ server {
             proxy_redirect  http://localhost:3000/ /;
             proxy_read_timeout 60s;
         }
+}
+
+server {
+    server_name www.sgoudelouf.com;
+    return 301 $scheme://sgoudelouf.com$request_uri;
 }
