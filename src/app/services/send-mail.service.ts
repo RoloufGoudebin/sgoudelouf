@@ -9,8 +9,7 @@ export class SendmailService {
   constructor(private http: HttpClient) { }
 
   sendMail(message: any){
-    console.log(message)
-    this.http.post("https://sgoudelouf.com/sendmail", message).subscribe(
+    this.http.post('https://us-central1-mamoot-api.cloudfunctions.net/sendMail', message).subscribe(
       data => {
         let res: any = data;
         console.log(

@@ -27,7 +27,9 @@ export class ContactComponent implements OnInit {
       message: "<p> Message venant de " + this.contactForm.value.name +
         "</p><br><p>Mail : " + this.contactForm.value.mail +
         "</p><br><p>Concerne : " + this.contactForm.value.message + 
-        "</p>"
+        "</p>",
+        subject : "Demande d'informations",
+         to:"sgoudelouf@gmail.com"
     }
     this.sendMail.sendMail(user);
     this.contactForm.reset();
